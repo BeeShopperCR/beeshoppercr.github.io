@@ -2,3 +2,14 @@
 
 /* Información adicional: conserva el estilo original */
 .extras{background:#fffefa}.extra-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.extra-card{background:#fffaf0;border:1px solid #ecdfc8;border-radius:22px;padding:30px;color:#795d45;line-height:1.75;font-size:14px}.extra-card h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--brown);margin:0 0 16px}.extra-card ul,.faq-items ul{padding-left:20px}.extra-card li,.faq-items li{margin-bottom:11px}.extra-card strong,.faq-items strong{color:var(--dark)}.electronics{grid-column:1/-1;background:#fff0c8}.electronics .btn{margin-top:10px}.legal-note{font-size:12px;color:#90755f;border-top:1px solid #e6d8c2;padding-top:14px}.rate-row{gap:15px;align-items:center}.rate-row strong{text-align:right;font-size:clamp(13px,1.4vw,19px)}.faq-link{text-decoration:underline;color:var(--brown);font-weight:700}@media(max-width:680px){.extra-grid{grid-template-columns:1fr}.electronics{grid-column:auto}.extra-card{padding:24px}}
+
+/* Cinta animada: las frases se desplazan para que se lean completas en cualquier pantalla */
+.ticker{text-align:left}
+.ticker-track{display:flex;width:max-content;animation:ticker-scroll 32s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-group{display:flex;align-items:center;flex-shrink:0}
+.ticker-group p{margin:0}
+.ticker-group span{margin:0 20px}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:680px){.ticker{padding:14px 0;font-size:11px;letter-spacing:1.5px}.ticker-group span{margin:0 14px}.ticker-track{animation-duration:24s}}
+@media(prefers-reduced-motion:reduce){.ticker{white-space:normal;padding:14px 16px}.ticker-track{animation:none;width:auto}.ticker-group{flex-wrap:wrap;justify-content:center;row-gap:6px;width:100%}.ticker-group[aria-hidden="true"],.ticker-group p:nth-of-type(n+4),.ticker-group span{display:none}.ticker-group p{flex-basis:100%;text-align:center}}
